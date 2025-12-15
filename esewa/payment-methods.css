@@ -1,0 +1,226 @@
+/* Payment Methods Styling */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.payment-methods h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.payment-methods h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+.payment-method {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.payment-method::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.payment-method:hover {
+    border-color: #3498db;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+    transform: translateY(-2px);
+}
+
+.payment-method:hover::before {
+    transform: scaleX(1);
+}
+
+.payment-method.selected {
+    border-color: #3498db;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+}
+
+.payment-method.selected::before {
+    transform: scaleX(1);
+}
+
+.payment-method button {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+.payment-method img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.payment-method:hover img {
+    transform: scale(1.05);
+}
+
+.payment-method i {
+    font-size: 2rem;
+    color: #27ae60;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
+    transition: all 0.3s ease;
+}
+
+.payment-method:hover i {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.payment-method div {
+    flex: 1;
+}
+
+.payment-method h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.payment-method:hover h3 {
+    color: #3498db;
+}
+
+.payment-method p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.payment-method:hover p {
+    color: #5a6c7d;
+}
+
+/* Specific styling for eSewa payment */
+#esewa-payment {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+#esewa-payment:hover {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+}
+
+#esewa-payment.selected {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+}
+
+/* Specific styling for Cash on Delivery */
+#cod-payment {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+#cod-payment:hover {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+}
+
+#cod-payment.selected {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+}
+
+#cod-payment i {
+    color: #27ae60;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-methods {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .payment-method {
+        padding: 1rem;
+    }
+    
+    .payment-method button {
+        gap: 1rem;
+    }
+    
+    .payment-method img,
+    .payment-method i {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .payment-method h3 {
+        font-size: 1.1rem;
+    }
+    
+    .payment-method p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Animation for selection */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+    }
+    100% {
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+    }
+}
+
+.payment-method.selected {
+    animation: pulse 2s infinite;
+} 

@@ -1,0 +1,175 @@
+/* Admin Dashboard Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #3498db;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.admin-menu {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.admin-menu li {
+    background: #ffffff;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-menu li:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admin-menu a {
+    display: flex;
+    align-items: center;
+    padding: 1.8rem;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.admin-menu a:hover {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+    border-color: #3498db;
+    transform: scale(1.02);
+}
+
+.admin-menu i {
+    margin-right: 1.2rem;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.admin-menu a:hover i {
+    background: linear-gradient(45deg, #ffffff, #f1f1f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+/* Specific colors for each menu item */
+.admin-menu li:nth-child(1) a:hover {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+}
+
+.admin-menu li:nth-child(2) a:hover {
+    background: linear-gradient(145deg, #2ecc71, #27ae60);
+}
+
+.admin-menu li:nth-child(3) a:hover {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+}
+
+.admin-menu li:nth-child(4) a:hover {
+    background: linear-gradient(145deg, #9b59b6, #8e44ad);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .dashboard-container {
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border-radius: 15px;
+    }
+
+    .welcome-header {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .admin-menu {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .admin-menu a {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-container {
+    animation: fadeIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover effect for the entire container */
+.dashboard-container:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+    transition: all 0.4s ease;
+} 

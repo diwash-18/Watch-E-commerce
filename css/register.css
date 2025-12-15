@@ -1,0 +1,113 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c92d2);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.register-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.register-form {
+  background: #f9f9f9;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 100%;
+}
+
+.register-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.register-form label {
+  display: block;
+  margin-top: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-form button:hover {
+  background-color: #1c5980;
+}
+
+.bottom-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.bottom-text a {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}
